@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C4A45F;
+  --black: #0A0A0A;
+  --dark-gray: #1A1A1A;
+  --text: #FFFFFF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#0A0A0A] text-white;
+  }
+
+  /* Improve focus visibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-[#C4A45F] ring-offset-2 ring-offset-[#0A0A0A];
+  }
+
+  /* Ensure text remains readable */
+  @media (max-width: 640px) {
+    html {
+      @apply text-[16px];
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* Animation classes */
+.animate-on-scroll {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.bg-hero{
+  background-image: url('../public/background/hero-back.webp');
+  background-repeat: no-repeat;
+  background-size: cover; /* Change to cover for full coverage */
+  background-attachment: fixed; /* Enables the parallax effect */
+  background-position: center; /* Centers the image */
+}
+.bg-especialista {
+  background-image: url('../public/background/especialista-back.webp');
+  background-repeat: no-repeat;
+  background-size: cover; /* Change to cover for full coverage */
+  background-attachment: fixed; /* Enables the parallax effect */
+  background-position: center; /* Centers the image */
+}
+.bg-mapa {
+  background-image: url('../public/background/mapa.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-servicos {
+  background-image: url('../public/background/servicos.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* Enables the parallax effect */
+  background-position: center; /* Centers the image */
+}
+.bg-maos {
+  background-image: url('../public/background/maos.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* Enables the parallax effect */
+  background-position: center; /* Centers the image */
+}
+.animate-scale {
+  opacity: 0;
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* Stagger children animations */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Component styles */
+.btn-primary {
+  @apply bg-[#C4A45F] text-white px-6 py-3 rounded 
+         hover:bg-[#B3934F] hover:scale-105
+         transition-all duration-300 
+         focus:ring-2 focus:ring-[#C4A45F] focus:ring-offset-2 focus:outline-none;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-8 text-[#C4A45F];
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.gold-border {
+  @apply border-[#C4A45F] border-2;
+}
+
+.gold-text {
+  @apply text-[#C4A45F];
+}
+
+.service-card {
+  @apply bg-[#1A1A1A] p-6 rounded-lg 
+         border border-[#C4A45F]/20
+         hover:border-[#C4A45F] hover:bg-[#1A1A1A]/80 
+         hover:scale-105
+         transition-all duration-300;
+}
+
+/* Parallax effect */
+.parallax {
+  @apply relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Interactive elements */
+.interactive-link {
+  @apply relative inline-block;
+}
+
+.interactive-link::after {
+  @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-[#C4A45F]
+         transition-all duration-300;
+}
+
+.interactive-link:hover::after {
+  @apply w-full;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-300
+         hover:transform hover:scale-105
+         hover:shadow-lg hover:shadow-[#C4A45F]/20;
+}
+
+@media (max-width: 640px) {
+  .bg-image {
+    display: grid;
+    place-items: center;
+    background-size: contain; /* Adjust size to prevent duplication */
+  }
+}
