@@ -6,18 +6,48 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 const playfair = Playfair_Display({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'JBB Advocacia | Especialistas em Direito Previdenciário',
-  description: 'Escritório especializado em direito previdenciário com mais de 1500 benefícios concedidos. Atendimento em todo Brasil, primeira consulta gratuita.',
-  keywords: 'advocacia previdenciária, aposentadoria, auxílio-doença, INSS, benefício previdenciário, advogado previdenciário, São José do Rio Preto',
-  authors: [{ name: 'JBB Advocacia' }],
+  metadataBase: new URL('https://advocaciabressanoficial.web.app'),
+  title: 'Bressan Advocacia | Especialistas em Direito Previdenciário',
+  description: 'Bressan Advocacia | Especialistas em Direito Previdenciário',
   openGraph: {
-    title: 'JBB Advocacia | Especialistas em Direito Previdenciário',
-    description: 'Escritório especializado em direito previdenciário com mais de 1500 benefícios concedidos. Atendimento em todo Brasil.',
+    title: 'Bressan Advocacia | Especialistas em Direito Previdenciário',
+    description: 'Escritório especializado em direito previdenciário com mais de 1500 benefícios concedidos. Atendimento em todo Brasil',
     type: 'website',
     locale: 'pt_BR',
-  }
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bressan Advocacia | Especialistas em Direito Previdenciário',
+      },
+    ],
+    siteName: 'Bressan Advocacia',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bressan Advocacia | Especialistas em Direito Previdenciário',
+    description: 'Escritório especializado em direito previdenciário com mais de 1500 benefícios concedidos. Atendimento em todo Brasil',
+    images: ['/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://advocaciabressanoficial.web.app/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/logo.ico',
+  },
 };
-
 export default function RootLayout({
   children,
 }: {
