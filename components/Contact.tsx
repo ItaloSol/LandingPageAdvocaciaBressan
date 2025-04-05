@@ -9,7 +9,7 @@ export default function Contact() {
 
   return (
     <footer className="section-padding bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto  px-4">
         <ScrollReveal>
           <h2 className="text-center mb-12">
             <span className="block text-[#957D56] text-4xl md:text-5xl font-bold">
@@ -25,7 +25,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* Contact Information */}
             <ScrollReveal animation="slideUp" delay={0.2}>
-              <div className="space-y-6">
+              <div className="space-y-6 p-4 ">
                 <a 
                   href="tel:+5517996088520" 
                   className="flex items-center gap-3 text-lg text-[#1A1A1A] hover:text-[#957D56] 
@@ -66,13 +66,11 @@ export default function Contact() {
                     href="https://www.instagram.com/bressanadvocacia/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 bg-gradient-to-r from-[#833AB4] via-[#C13584] to-[#E1306C] 
-                             p-4 rounded-lg text-white
-                             hover:scale-105 transition-all duration-300
-                             shadow-lg hover:shadow-xl"
+                    className="group flex items-center gap-4 hover:scale-105 transition-all duration-300
+                             "
                     aria-label="Siga-nos no Instagram"
                   >
-                    <Instagram className="w-8 h-8" />
+                    <Instagram className="w-8 h-8 " />
                     <div className="flex-1">
                       <p className="font-semibold text-lg">Siga-nos no Instagram</p>
                       <p className="text-sm opacity-90">@bressanadvocacia</p>
@@ -86,12 +84,10 @@ export default function Contact() {
                     href="https://www.facebook.com/jvbressanadvocacia"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 bg-[#1877F2] p-4 rounded-lg text-white
-                             hover:scale-105 transition-all duration-300
-                             shadow-lg hover:shadow-xl"
+                    className="group flex items-center gap-4  hover:scale-105 transition-all duration-300"
                     aria-label="Siga-nos no Facebook"
                   >
-                    <Facebook className="w-8 h-8" />
+                    <Facebook className="w-8 h-8 transition-colors" />
                     <div className="flex-1">
                       <p className="font-semibold text-lg">Curta nossa página</p>
                       <p className="text-sm opacity-90">JBB Advocacia</p>
@@ -113,7 +109,7 @@ export default function Contact() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Localização do escritório"
-                  className="grayscale hover:grayscale-0 transition-all duration-300"
+                  
                 ></iframe>
               </div>
             </ScrollReveal>

@@ -54,7 +54,7 @@ export default function AreasExpertise() {
     <section className="section-padding bg-white">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-center mb-16">
+          <h2 className="text-center p-2 mb-16">
             <span className="block text-[#957D56] text-4xl md:text-5xl font-bold">
               ÁREAS DE ATUAÇÃO
             </span>

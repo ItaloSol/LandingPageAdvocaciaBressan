@@ -76,7 +76,7 @@ export default function Stats() {
   const stats = [
     {
       value: 647,
-      label: "Clientes\nConcedidos",
+      label: "Clientes\nAtendidos",
       prefix: "+",
       suffix: ""
     },
