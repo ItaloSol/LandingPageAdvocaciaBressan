@@ -29,7 +29,7 @@ export default function Hero() {
             <ScrollReveal animation="fadeIn" delay={0.4}>
               <div className="relative w-full aspect-[3/4] max-w-[500px] mx-auto">
                 <Image
-                  src="/hero1.png"
+                  src="/hero1.webp"
                   alt="Advogado especialista em direito previdenciário"
                   fill
                   className="object-cover object-bottom" // Added object-bottom for positioning
@@ -51,7 +51,7 @@ export default function Hero() {
                   alt="Logo JBB Advocacia"
                   width={220} // Adjust width as needed
                   height={220} // Adjust height as needed
-                  className="border-2 border-[#957D56] rounded-full"
+                 
                 />
               </div>
             </ScrollReveal>

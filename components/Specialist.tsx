@@ -14,7 +14,7 @@ export default function Specialist() {
           <ScrollReveal animation="fadeIn">
             <div className="relative aspect-[3/4] w-full max-w-[600px] mx-auto lg:mx-0">
               <Image
-                src="/hero.png"
+                src="/hero.webp"
                 alt="Dr. João Victor Bressan - Advogado Especialista em Direito Previdenciário"
                 fill
                 className="object-cover object-center"
