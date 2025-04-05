@@ -41,11 +41,11 @@ export default function ScrollReveal({
         if (!elementRef.current) return;
         
         elementRef.current.style.animationDelay = `${delay}s`;
-        elementRef.current.style.willChange = 'transform, opacity';
+        elementRef.current.style.willChange = 'opacity';
         elementRef.current.classList.add(
-          animation === 'fadeIn' ? 'animate-on-scroll' :
+          animation === 'fadeIn' ? 'animate-fade-in' :
           animation === 'slideUp' ? 'animate-slide-up' :
-          'animate-scale'
+          'animate-scale-in'
         );
       });
     }
@@ -69,8 +69,8 @@ export default function ScrollReveal({
         style={{ 
           opacity: 0,
           transform: 'translateZ(0)',
-          perspective: '1000px',
-          backfaceVisibility: 'hidden'
+          minHeight: 'min-content',
+          contentVisibility: 'auto',
         }}
       >
         {children}

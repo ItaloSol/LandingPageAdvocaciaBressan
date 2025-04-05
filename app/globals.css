@@ -16,7 +16,6 @@
   -webkit-backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content-visibility: auto;
 }
 
 @layer base {
@@ -56,91 +55,65 @@
   }
 }
 
-/* Hardware accelerated animations with reduced motion support */
+/* Optimized animations with reduced motion support */
 @media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in {
+    animation: fadeIn 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
   @keyframes fadeIn {
-    from { 
-      transform: translate3d(0, 20px, 0);
-      opacity: 0;
-    }
-    to { 
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   @keyframes slideUp {
     from {
-      transform: translate3d(0, 40px, 0);
       opacity: 0;
+      transform: translateY(20px);
     }
     to {
-      transform: translate3d(0, 0, 0);
       opacity: 1;
+      transform: translateY(0);
     }
   }
 
   @keyframes scaleIn {
     from {
-      transform: scale3d(0.95, 0.95, 1);
       opacity: 0;
+      transform: scale(0.98);
     }
     to {
-      transform: scale3d(1, 1, 1);
       opacity: 1;
+      transform: scale(1);
     }
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale3d(1, 1, 1);
-    }
-    70% {
-      transform: scale3d(1.05, 1.05, 1);
-    }
-    100% {
-      transform: scale3d(1, 1, 1);
-    }
-  }
-
-  .animate-on-scroll {
-    will-change: transform, opacity;
-    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    transform: translateZ(0);
-  }
-
-  .animate-slide-up {
-    will-change: transform, opacity;
-    animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    transform: translateZ(0);
-  }
-
-  .animate-scale {
-    will-change: transform, opacity;
-    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    transform: translateZ(0);
   }
 }
 
 .stagger-children > * {
   opacity: 0;
-  transform: translateZ(0);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .stagger-children > *:nth-child(1) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards; }
-  .stagger-children > *:nth-child(2) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards; }
-  .stagger-children > *:nth-child(3) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards; }
-  .stagger-children > *:nth-child(4) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards; }
-  .stagger-children > *:nth-child(5) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards; }
-  .stagger-children > *:nth-child(6) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards; }
+  .stagger-children > *:nth-child(1) { animation: fadeIn 600ms cubic-bezier(0.4, 0, 0.2, 1) 100ms forwards; }
+  .stagger-children > *:nth-child(2) { animation: fadeIn 600ms cubic-bezier(0.4, 0, 0.2, 1) 200ms forwards; }
+  .stagger-children > *:nth-child(3) { animation: fadeIn 600ms cubic-bezier(0.4, 0, 0.2, 1) 300ms forwards; }
+  .stagger-children > *:nth-child(4) { animation: fadeIn 600ms cubic-bezier(0.4, 0, 0.2, 1) 400ms forwards; }
+  .stagger-children > *:nth-child(5) { animation: fadeIn 600ms cubic-bezier(0.4, 0, 0.2, 1) 500ms forwards; }
+  .stagger-children > *:nth-child(6) { animation: fadeIn 600ms cubic-bezier(0.4, 0, 0.2, 1) 600ms forwards; }
 }
 
 @layer components {
   .btn-primary {
     @apply bg-[#957D56] text-white px-6 py-3 rounded 
-           hover:bg-[#7A6545] hover:scale-105
-           transform-gpu transition-transform duration-300 
+           hover:bg-[#7A6545] transition-colors duration-300
            focus:ring-2 focus:ring-[#957D56] focus:ring-offset-2 focus:outline-none;
   }
 
@@ -164,8 +137,7 @@
     @apply bg-white p-6 rounded-lg shadow-md
            border border-[#3E4A46]/20
            hover:border-[#957D56] hover:bg-gray-50
-           transform-gpu hover:scale-105
-           transition-transform duration-300;
+           transition-colors duration-300;
   }
 }
 
@@ -176,7 +148,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  will-change: transform;
 }
 
 .interactive-link {
@@ -194,8 +165,7 @@
 }
 
 .hover-card {
-  @apply transition-transform duration-300
-         hover:transform-gpu hover:scale-105
+  @apply transition-colors duration-300
          hover:shadow-lg hover:shadow-[#957D56]/20;
 }
 

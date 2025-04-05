@@ -27,7 +27,7 @@ export default function NationalCoverage() {
             <ScrollReveal>
               <div className="relative w-full aspect-square max-w-[500px] mx-auto">
                 <Image
-                  src="/mapa.png"
+                  src="/mapa.webp"
                   alt="Mapa do Brasil mostrando nossa cobertura nacional"
                   fill
                   className="object-contain"

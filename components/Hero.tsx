@@ -14,7 +14,7 @@ export default function Hero() {
         aria-hidden="true"
       ></div>
       <Image
-        src="/back-hero.jfif"
+        src="/back-hero.webp"
         alt="Professional law office environment"
         fill
         className="object-cover"
