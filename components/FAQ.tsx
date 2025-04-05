@@ -56,6 +56,7 @@ export default function FAQ() {
                          hover:border-[#957D56] hover:shadow-card-hover transition-all duration-300"
               >
                 <button
+                  type="button"
                   className="w-full p-6 text-left flex items-center justify-between gap-4
                            hover:bg-gray-50 transition-colors duration-300"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}

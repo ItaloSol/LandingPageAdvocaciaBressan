@@ -1,9 +1,12 @@
 "use client";
 
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 export default function Contact() {
+  const message = encodeURIComponent("Oi, quero falar com um especialista sobre meu caso");
+  const whatsappUrl = `https://wa.me/5517996088520?text=${message}`;
+
   return (
     <footer className="section-padding bg-gray-50">
       <div className="container mx-auto px-4">
@@ -56,6 +59,45 @@ export default function Contact() {
                     <p>09h - 17h</p>
                   </div>
                 </div>
+
+                {/* Instagram Call to Action */}
+                <div className="pt-6">
+                  <a
+                    href="https://www.instagram.com/bressanadvocacia/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-4 bg-gradient-to-r from-[#833AB4] via-[#C13584] to-[#E1306C] 
+                             p-4 rounded-lg text-white
+                             hover:scale-105 transition-all duration-300
+                             shadow-lg hover:shadow-xl"
+                    aria-label="Siga-nos no Instagram"
+                  >
+                    <Instagram className="w-8 h-8" />
+                    <div className="flex-1">
+                      <p className="font-semibold text-lg">Siga-nos no Instagram</p>
+                      <p className="text-sm opacity-90">@bressanadvocacia</p>
+                    </div>
+                  </a>
+                </div>
+
+                {/* Facebook Link */}
+                <div className="pt-2">
+                  <a
+                    href="https://www.facebook.com/jvbressanadvocacia"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-4 bg-[#1877F2] p-4 rounded-lg text-white
+                             hover:scale-105 transition-all duration-300
+                             shadow-lg hover:shadow-xl"
+                    aria-label="Siga-nos no Facebook"
+                  >
+                    <Facebook className="w-8 h-8" />
+                    <div className="flex-1">
+                      <p className="font-semibold text-lg">Curta nossa página</p>
+                      <p className="text-sm opacity-90">JBB Advocacia</p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </ScrollReveal>
 
@@ -81,7 +123,9 @@ export default function Contact() {
           <ScrollReveal animation="fadeIn" delay={0.6}>
             <div className="text-center">
               <a
-                href="https://wa.me/5517996088520"
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#957D56] text-white px-8 py-4 rounded-lg
                          hover:bg-[#7A6545] hover:scale-105 transition-all duration-300 
                          focus:ring-2 focus:ring-[#957D56] focus:ring-offset-2 focus:outline-none"

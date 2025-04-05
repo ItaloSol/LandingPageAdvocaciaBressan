@@ -1,7 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import WhatsAppButton from '@/components/WhatsAppButton';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -14,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://advocaciabressanoficial.web.app'),
   title: {
-    default: 'JBB Advocacia | Especialistas em Direito Previdenciário',
+    default: 'JBB Advocacia | Especialista em Direito Previdenciário',
     template: '%s | JBB Advocacia'
   },
   description: 'Escritório especializado em direito previdenciário com mais de 360 benefícios concedidos. Atendimento em todo Brasil, primeira consulta gratuita.',
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'JBB Advocacia | Especialistas em Direito Previdenciário',
+    title: 'JBB Advocacia | Especialista em Direito Previdenciário',
     description: 'Escritório especializado em direito previdenciário com mais de 360 benefícios concedidos. Atendimento em todo Brasil.',
     url: 'https://advocaciabressanoficial.web.app',
     siteName: 'JBB Advocacia',
@@ -45,16 +44,16 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'JBB Advocacia - Especialistas em Direito Previdenciário',
+        alt: 'JBB Advocacia - Especialista em Direito Previdenciário',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JBB Advocacia | Especialistas em Direito Previdenciário',
+    title: 'JBB Advocacia | Especialista em Direito Previdenciário',
     description: 'Escritório especializado em direito previdenciário com mais de 360 benefícios concedidos.',
     images: ['/og-image.jpg'],
   },
@@ -77,6 +76,7 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: {
@@ -85,27 +85,20 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`scroll-smooth ${inter.variable}`}>
       <head>
-        <link
-          rel="preload"
-          href="https://advocaciabressanoficial.web.app/og-image.png"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link rel="preconnect" href="https://advocaciabressanoficial.web.app/" />
-        <link rel="dns-prefetch" href="https://advocaciabressanoficial.web.app/" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         
         {/* Preload critical images */}
         <link
           rel="preload"
           as="image"
-          href="https://advocaciabressanoficial.web.app/og-image.png"
+          href="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=360"
           media="(max-width: 360px)"
         />
         <link
           rel="preload"
           as="image"
-          href="https://advocaciabressanoficial.web.app/og-image.png"
+          href="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=360"
           media="(max-width: 360px)"
         />
         
@@ -121,7 +114,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
-        <WhatsAppButton />
+       
       </body>
     </html>
   );

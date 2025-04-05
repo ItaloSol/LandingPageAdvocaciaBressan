@@ -4,6 +4,9 @@ import { Users, MessageSquare, Brain, HeartHandshake } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 export default function WhyChooseUs() {
+  const message = encodeURIComponent("Oi, quero falar com um especialista sobre meu caso");
+  const whatsappUrl = `https://wa.me/5517996088520?text=${message}`;
+
   const benefits = [
     {
       icon: Users,
@@ -33,7 +36,7 @@ export default function WhyChooseUs() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Por que <span className="text-[#957D56]">nos escolher</span>
+              Por que <span className="text-[#957D56]">nos escolher?</span>
             </h2>
             <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto">
               Nossa missão é oferecer um serviço jurídico de excelência, 
@@ -52,9 +55,7 @@ export default function WhyChooseUs() {
                          group"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-[#957D56]/10 rounded-lg group-hover:bg-[#957D56]/20 transition-all duration-300">
-                    <benefit.icon className="w-6 h-6 text-[#957D56]" />
-                  </div>
+                  <benefit.icon className="w-6 h-6 text-[#957D56] flex-shrink-0" />
                   <div>
                     <h3 className="text-xl font-semibold mb-2 text-[#1A1A1A]">
                       {benefit.title}
@@ -72,7 +73,9 @@ export default function WhyChooseUs() {
         <ScrollReveal delay={0.6}>
           <div className="mt-16 text-center">
             <a
-              href="https://wa.me/5517996088520"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#957D56] text-white px-8 py-4 rounded-lg
                        hover:bg-[#7A6545] hover:scale-105 transition-all duration-300 
                        focus:ring-2 focus:ring-[#957D56] focus:ring-offset-2 focus:outline-none"

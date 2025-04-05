@@ -6,8 +6,6 @@ const nextConfig = {
   },
   images: { 
     unoptimized: true,
-    loader: 'custom',
-    loaderFile: './image-loader.js',
     deviceSizes: [360, 640, 750, 828],
     imageSizes: [16, 32, 48, 64, 96],
   },
@@ -15,9 +13,6 @@ const nextConfig = {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons', 'framer-motion'],
     scrollRestoration: true,
-    critters: true,
-    optimizeServerComponents: true,
-    legacyBrowsers: false,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -25,7 +20,6 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
-  swcMinify: true,
 };
 
 // Only add analyzer in development

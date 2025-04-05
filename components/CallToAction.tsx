@@ -4,6 +4,9 @@ import { Scale, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 export default function CallToAction() {
+  const message = encodeURIComponent("Oi, quero falar com um especialista sobre meu caso");
+  const whatsappUrl = `https://wa.me/5517996088520?text=${message}`;
+
   return (
     <section className="section-padding bg-white">
       <div className="container mx-auto px-4">
@@ -25,7 +28,9 @@ export default function CallToAction() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://wa.me/5517996088520"
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-[#957D56] text-white px-8 py-4 rounded-lg
                            hover:bg-[#7A6545] hover:scale-105 transition-all duration-300 
                            focus:ring-2 focus:ring-[#957D56] focus:ring-offset-2 focus:outline-none"

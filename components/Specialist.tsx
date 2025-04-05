@@ -14,7 +14,7 @@ export default function Specialist() {
           <ScrollReveal animation="fadeIn">
             <div className="relative aspect-[3/4] w-full max-w-[600px] mx-auto lg:mx-0">
               <Image
-                src="/hero.webp"
+                src="/especialista.webp"
                 alt="Dr. João Victor Bressan - Advogado Especialista em Direito Previdenciário"
                 fill
                 className="object-cover object-center"
@@ -55,9 +55,9 @@ export default function Specialist() {
                 </p>
 
                 <p>
-                  Meu compromisso é oferecer um atendimento personalizado e humanizado, 
-                  compreendendo que cada caso é único e merece atenção especial. Coloco toda 
-                  minha experiência e conhecimento a serviço dos seus direitos previdenciários.
+                  Independente da área que meu escritório for contratado, meu compromisso é oferecer um 
+                  atendimento personalizado e humanizado, compreendendo que cada caso é único e merece 
+                  atenção especial. Coloco toda minha experiência e conhecimento a serviço dos seus direitos.
                 </p>
               </div>
             </ScrollReveal>

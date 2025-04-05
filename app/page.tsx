@@ -10,10 +10,12 @@ import CallToAction from '@/components/CallToAction';
 import NationalCoverage from '@/components/NationalCoverage';
 import WhyChooseUs from '@/components/WhyChooseUs';
 
+
 export default function Home() {
   return (
     <main className="bg-white">
       <Hero />
+
       <Stats />
       <AreasExpertise />
       <WhyChooseUs />
@@ -22,6 +24,7 @@ export default function Home() {
       <CallToAction />
       <FAQ />
       <Contact />
+      
     </main>
   );
 }
