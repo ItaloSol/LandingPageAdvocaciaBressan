@@ -30,10 +30,10 @@ export default function Hero() {
             <ScrollReveal animation="fadeIn" delay={0.4}>
               <div className="relative w-full aspect-[3/4] max-w-[500px] mx-auto">
                 <Image
-                  src="/hero1.webp"
+                  src="/hero1.webp" // Ensure this file exists in the public directory
                   alt="Advogado especialista em direito previdenciário"
                   fill
-                  className="object-cover object-bottom" // Added object-bottom for positioning
+                  className="object-cover object-bottom"
                   priority
                   quality={100}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"

@@ -5,7 +5,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { 
-    unoptimized: false, // Enable image optimization
+    unoptimized: true, // Disable image optimization for static export
     formats: ['image/avif', 'image/webp'], // Add AVIF support
     deviceSizes: [360, 640, 750, 828], // Optimize for mobile-first
     imageSizes: [16, 32, 48, 64, 96],
@@ -14,7 +14,6 @@ const nextConfig = {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons', 'framer-motion'],
     scrollRestoration: true,
-    // Removed optimizeServerComponents as it's unrecognized
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
