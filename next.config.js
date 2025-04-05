@@ -5,14 +5,16 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { 
-    unoptimized: true,
-    formats: ['image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: false, // Enable image optimization
+    formats: ['image/avif', 'image/webp'], // Add AVIF support
+    deviceSizes: [360, 640, 750, 828], // Optimize for mobile-first
+    imageSizes: [16, 32, 48, 64, 96],
   },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons', 'framer-motion'],
+    scrollRestoration: true,
+    // Removed optimizeServerComponents as it's unrecognized
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

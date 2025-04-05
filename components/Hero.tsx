@@ -1,5 +1,6 @@
 "use client";
 
+import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import { MessageCircle } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';

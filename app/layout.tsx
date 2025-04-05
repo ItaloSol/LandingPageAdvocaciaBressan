@@ -87,14 +87,27 @@ export default function RootLayout({
       <head>
         <link
           rel="preload"
-          href="/og-image.png"
+          href="https://advocaciabressanoficial.web.app/og-image.png"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link rel="preconnect" href="https://advocaciabressanoficial.web.app/" />
         <link rel="dns-prefetch" href="https://advocaciabressanoficial.web.app/" />
-        <link rel="icon" href="/logo.ico" type="image/x-icon" /> 
+        
+        {/* Preload critical images */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://advocaciabressanoficial.web.app/og-image.png"
+          media="(max-width: 360px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="https://advocaciabressanoficial.web.app/og-image.png"
+          media="(max-width: 360px)"
+        />
       </head>
       <body className={inter.className}>
         {children}
