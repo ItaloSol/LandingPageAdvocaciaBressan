@@ -5,19 +5,27 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { 
-    unoptimized: true, // Disable image optimization for static export
-    formats: ['image/avif', 'image/webp'], // Add AVIF support
-    deviceSizes: [360, 640, 750, 828], // Optimize for mobile-first
+    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './image-loader.js',
+    deviceSizes: [360, 640, 750, 828],
     imageSizes: [16, 32, 48, 64, 96],
   },
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons', 'framer-motion'],
     scrollRestoration: true,
+    critters: true,
+    optimizeServerComponents: true,
+    legacyBrowsers: false,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  poweredByHeader: false,
+  compress: true,
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 // Only add analyzer in development

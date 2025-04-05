@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://advocaciabressanoficial.web.app/'),
+  metadataBase: new URL('https://advocaciabressanoficial.web.app'),
   title: {
     default: 'JBB Advocacia | Especialistas em Direito Previdenciário',
     template: '%s | JBB Advocacia'
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'JBB Advocacia | Especialistas em Direito Previdenciário',
     description: 'Escritório especializado em direito previdenciário com mais de 360 benefícios concedidos. Atendimento em todo Brasil.',
-    url: 'https://advocaciabressanoficial.web.app/',
+    url: 'https://advocaciabressanoficial.web.app',
     siteName: 'JBB Advocacia',
     locale: 'pt_BR',
     type: 'website',
@@ -56,10 +56,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'JBB Advocacia | Especialistas em Direito Previdenciário',
     description: 'Escritório especializado em direito previdenciário com mais de 360 benefícios concedidos.',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://advocaciabressanoficial.web.app/',
+    canonical: 'https://advocaciabressanoficial.web.app',
   },
   verification: {
     google: 'your-google-verification-code',
@@ -108,6 +108,16 @@ export default function RootLayout({
           href="https://advocaciabressanoficial.web.app/og-image.png"
           media="(max-width: 360px)"
         />
+        
+        {/* Preconnect to external services */}
+        <link rel="preconnect" href="https://wa.me" crossOrigin="anonymous" />
+        
+        {/* Critical CSS */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          :root{--gold:#957D56;--green:#3E4A46;--background:#FFF;--text:#1A1A1A}
+          *{-webkit-font-smoothing:antialiased}
+          body{background:#fff;color:#1A1A1A}
+        `}} />
       </head>
       <body className={inter.className}>
         {children}

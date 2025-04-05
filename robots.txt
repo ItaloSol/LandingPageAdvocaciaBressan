@@ -5,4 +5,4 @@ Disallow: /_next/
 Disallow: /static/
 
 # Sitemap
-Sitemap: https://advocaciabressanoficial.web.app//sitemap.xml
+Sitemap: https://advocaciabressanoficial.web.app/sitemap.xml
