@@ -1,0 +1,11 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+
+Host: https://advocaciabressanoficial.web.app
+Sitemap: https://advocaciabressanoficial.web.app/sitemap.xml
