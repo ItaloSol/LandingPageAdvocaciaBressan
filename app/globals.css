@@ -3,10 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --gold: #C4A45F;
-  --black: #0A0A0A;
-  --dark-gray: #1A1A1A;
-  --text: #FFFFFF;
+  --gold: #957D56;
+  --green: #3E4A46;
+  --background: #FFFFFF;
+  --text: #1A1A1A;
+}
+
+/* Performance optimizations */
+* {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer base {
@@ -14,16 +23,31 @@
     scroll-behavior: smooth;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   body {
-    @apply bg-[#0A0A0A] text-white;
+    @apply bg-white text-[#1A1A1A] font-sans;
   }
 
-  /* Improve focus visibility */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight text-[#1A1A1A];
+  }
+
   :focus-visible {
-    @apply outline-none ring-2 ring-[#C4A45F] ring-offset-2 ring-offset-[#0A0A0A];
+    @apply outline-none ring-2 ring-[#957D56] ring-offset-2 ring-offset-white;
   }
 
-  /* Ensure text remains readable */
   @media (max-width: 640px) {
     html {
       @apply text-[16px];
@@ -31,165 +55,133 @@
   }
 }
 
-/* Animations */
+/* Hardware accelerated animations */
 @keyframes fadeIn {
   from { 
+    transform: translate3d(0, 20px, 0);
     opacity: 0;
-    transform: translateY(20px);
   }
   to { 
+    transform: translate3d(0, 0, 0);
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @keyframes slideUp {
   from {
+    transform: translate3d(0, 40px, 0);
     opacity: 0;
-    transform: translateY(40px);
   }
   to {
+    transform: translate3d(0, 0, 0);
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @keyframes scaleIn {
   from {
+    transform: scale3d(0.95, 0.95, 1);
     opacity: 0;
-    transform: scale(0.9);
   }
   to {
+    transform: scale3d(1, 1, 1);
     opacity: 1;
-    transform: scale(1);
   }
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    transform: scale3d(1, 1, 1);
   }
   70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    transform: scale3d(1.05, 1.05, 1);
   }
   100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    transform: scale3d(1, 1, 1);
   }
 }
 
-/* Animation classes */
+/* Animation classes with hardware acceleration */
 .animate-on-scroll {
-  opacity: 0;
-  animation: fadeIn 0.6s ease-out forwards;
+  will-change: transform, opacity;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform: translateZ(0);
 }
 
 .animate-slide-up {
-  opacity: 0;
-  animation: slideUp 0.8s ease-out forwards;
+  will-change: transform, opacity;
+  animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform: translateZ(0);
 }
 
-.bg-hero{
-  background-image: url('../public/background/hero-back.webp');
-  background-repeat: no-repeat;
-  background-size: cover; /* Change to cover for full coverage */
-  background-attachment: fixed; /* Enables the parallax effect */
-  background-position: center; /* Centers the image */
-}
-.bg-especialista {
-  background-image: url('../public/background/especialista-back.webp');
-  background-repeat: no-repeat;
-  background-size: cover; /* Change to cover for full coverage */
-  background-attachment: fixed; /* Enables the parallax effect */
-  background-position: center; /* Centers the image */
-}
-.bg-mapa {
-  background-image: url('../public/background/mapa.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.bg-servicos {
-  background-image: url('../public/background/servicos.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed; /* Enables the parallax effect */
-  background-position: center; /* Centers the image */
-}
-.bg-maos {
-  background-image: url('../public/background/maos.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed; /* Enables the parallax effect */
-  background-position: center; /* Centers the image */
-}
 .animate-scale {
-  opacity: 0;
-  animation: scaleIn 0.5s ease-out forwards;
+  will-change: transform, opacity;
+  animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform: translateZ(0);
 }
 
-/* Stagger children animations */
 .stagger-children > * {
   opacity: 0;
-  animation: fadeIn 0.5s ease-out forwards;
+  transform: translateZ(0);
 }
 
-.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
-.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
-.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
-.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
-.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
-.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+.stagger-children > *:nth-child(1) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards; }
+.stagger-children > *:nth-child(2) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards; }
+.stagger-children > *:nth-child(3) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards; }
+.stagger-children > *:nth-child(4) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards; }
+.stagger-children > *:nth-child(5) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards; }
+.stagger-children > *:nth-child(6) { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards; }
 
-/* Component styles */
-.btn-primary {
-  @apply bg-[#C4A45F] text-white px-6 py-3 rounded 
-         hover:bg-[#B3934F] hover:scale-105
-         transition-all duration-300 
-         focus:ring-2 focus:ring-[#C4A45F] focus:ring-offset-2 focus:outline-none;
+@layer components {
+  .btn-primary {
+    @apply bg-[#957D56] text-white px-6 py-3 rounded 
+           hover:bg-[#7A6545] hover:scale-105
+           transform-gpu transition-transform duration-300 
+           focus:ring-2 focus:ring-[#957D56] focus:ring-offset-2 focus:outline-none;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-[#957D56];
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .gold-border {
+    @apply border-[#957D56] border-2;
+  }
+
+  .gold-text {
+    @apply text-[#957D56];
+  }
+
+  .service-card {
+    @apply bg-white p-6 rounded-lg shadow-md
+           border border-[#3E4A46]/20
+           hover:border-[#957D56] hover:bg-gray-50
+           transform-gpu hover:scale-105
+           transition-transform duration-300;
+  }
 }
 
-.section-title {
-  @apply text-3xl md:text-4xl font-bold mb-8 text-[#C4A45F];
-}
-
-.section-padding {
-  @apply py-16 md:py-24;
-}
-
-.gold-border {
-  @apply border-[#C4A45F] border-2;
-}
-
-.gold-text {
-  @apply text-[#C4A45F];
-}
-
-.service-card {
-  @apply bg-[#1A1A1A] p-6 rounded-lg 
-         border border-[#C4A45F]/20
-         hover:border-[#C4A45F] hover:bg-[#1A1A1A]/80 
-         hover:scale-105
-         transition-all duration-300;
-}
-
-/* Parallax effect */
 .parallax {
   @apply relative;
+  transform: translateZ(0);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  will-change: transform;
 }
 
-/* Interactive elements */
 .interactive-link {
   @apply relative inline-block;
+  transform: translateZ(0);
 }
 
 .interactive-link::after {
-  @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-[#C4A45F]
+  @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-[#957D56]
          transition-all duration-300;
 }
 
@@ -197,17 +189,20 @@
   @apply w-full;
 }
 
-/* Card hover effects */
 .hover-card {
-  @apply transition-all duration-300
-         hover:transform hover:scale-105
-         hover:shadow-lg hover:shadow-[#C4A45F]/20;
+  @apply transition-transform duration-300
+         hover:transform-gpu hover:scale-105
+         hover:shadow-lg hover:shadow-[#957D56]/20;
 }
 
-@media (max-width: 640px) {
-  .bg-image {
-    display: grid;
-    place-items: center;
-    background-size: contain; /* Adjust size to prevent duplication */
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 }

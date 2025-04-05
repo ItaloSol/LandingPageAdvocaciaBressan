@@ -45,7 +45,7 @@ export default function Expertise() {
 
   return (
     <section 
-      className="section-padding bg-servicos parallax" // Added parallax class
+      className="section-padding bg-white"
       aria-labelledby="expertise-title"
     >
       <div className="container mx-auto px-4">
@@ -54,10 +54,10 @@ export default function Expertise() {
             id="expertise-title" 
             className="text-center mb-16"
           >
-            <span className="block text-[#C4A45F] text-4xl md:text-5xl font-bold">
+            <span className="block text-[#957D56] text-4xl md:text-5xl font-bold">
               NOSSOS SERVIÇOS
             </span>
-            <span className="text-white text-xl mt-4 block">
+            <span className="text-[#4A4A4A] text-xl mt-4 block">
               Especialistas em todas as áreas do Direito Previdenciário
             </span>
           </h2>
@@ -72,24 +72,24 @@ export default function Expertise() {
                 aria-label={service.ariaLabel}
               >
                 <div 
-                  className="bg-[#1A1A1A] border border-[#C4A45F]/20 rounded-lg p-8 text-center h-full
+                  className="bg-gray-50 border border-[#3E4A46]/20 rounded-lg p-8 text-center h-full
                             transition-all duration-300 
-                            hover:border-[#C4A45F] hover:bg-[#1A1A1A]/90
-                            hover:shadow-lg hover:shadow-[#C4A45F]/20"
+                            hover:border-[#957D56] hover:bg-white
+                            hover:shadow-card-hover"
                 >
                   <div className="mb-6 transform transition-transform duration-300 group-hover:scale-110">
                     <service.icon 
-                      className="w-16 h-16 mx-auto text-[#C4A45F] transition-colors duration-300
-                               group-hover:text-[#C4A45F]" 
+                      className="w-16 h-16 mx-auto text-[#957D56] transition-colors duration-300
+                               group-hover:text-[#7A6545]" 
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className="text-xl font-medium text-white mb-4 transition-colors duration-300
-                               group-hover:text-[#C4A45F]">
+                  <h3 className="text-xl font-medium text-[#1A1A1A] mb-4 transition-colors duration-300
+                               group-hover:text-[#957D56]">
                     {service.title}
                   </h3>
-                  <p className="text-white/80 transition-colors duration-300
-                              group-hover:text-white">
+                  <p className="text-[#4A4A4A] transition-colors duration-300
+                              group-hover:text-[#1A1A1A]">
                     {service.description}
                   </p>
                 </div>

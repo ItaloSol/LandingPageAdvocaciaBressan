@@ -57,7 +57,7 @@ function StatCounter({ endValue, label, prefix = "+", suffix = "", decimals = 0 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-4xl md:text-5xl font-bold text-[#C4A45F] mb-2"
+            className="text-4xl md:text-5xl font-bold text-[#957D56] mb-2"
           >
             {prefix}
             {decimals > 0
@@ -67,7 +67,7 @@ function StatCounter({ endValue, label, prefix = "+", suffix = "", decimals = 0 
           </motion.div>
         )}
       </AnimatePresence>
-      <p className="text-sm md:text-base text-white/80 whitespace-pre-line">{label}</p>
+      <p className="text-sm md:text-base text-[#4A4A4A] whitespace-pre-line">{label}</p>
     </motion.div>
   );
 }
@@ -95,10 +95,10 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-24 bg-[#0A0A0A]">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="bg-[#1A1A1A] rounded-2xl border border-[#C4A45F]/20 p-8 md:p-12 shadow-xl
-                       hover:border-[#C4A45F] transition-all duration-300">
+        <div className="bg-gray-50 rounded-2xl border border-[#3E4A46]/20 p-8 md:p-12 shadow-card
+                     hover:shadow-card-hover hover:border-[#957D56] transition-all duration-300">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {stats.map((stat, index) => (
               <StatCounter

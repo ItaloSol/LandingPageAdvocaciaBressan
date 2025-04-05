@@ -10,7 +10,7 @@ export default function FAQ() {
   const faqs = [
     {
       question: 'Como funciona a primeira consulta?',
-      answer: 'A primeira consulta é gratuita e pode ser realizada presencialmente ou online. Nela, analisamos sua situação junto ao INSS, verificamos documentos e traçamos a melhor estratégia para seu caso. Você receberá todas as orientações necessárias sem compromisso.'
+      answer: 'Na primeira consulta, analisamos sua situação junto ao INSS, verificamos documentos e traçamos a melhor estratégia para seu caso. Você receberá todas as orientações necessárias para prosseguir com o processo.'
     },
     {
       question: 'Quanto tempo demora para conseguir um benefício do INSS?',
@@ -26,7 +26,7 @@ export default function FAQ() {
     },
     {
       question: 'Posso acompanhar o andamento do meu processo?',
-      answer: 'Sim! Fornecemos atualizações regulares sobre seu processo através de WhatsApp ou e-mail, conforme sua preferência. Você também terá acesso a um portal exclusivo para consultar o status do seu caso a qualquer momento.'
+      answer: 'Sim! Fornecemos atualizações regulares sobre seu processo através de WhatsApp ou e-mail, conforme sua preferência.'
     },
     {
       question: 'E se meu benefício for negado pelo INSS?',
@@ -35,14 +35,14 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-gray-50">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <h2 className="text-center mb-12">
-            <span className="block text-[#C4A45F] text-4xl md:text-5xl font-bold">
+            <span className="block text-[#957D56] text-4xl md:text-5xl font-bold">
               DÚVIDAS FREQUENTES
             </span>
-            <span className="text-white text-xl mt-4 block">
+            <span className="text-[#4A4A4A] text-xl mt-4 block">
               Esclarecemos suas principais dúvidas sobre direito previdenciário
             </span>
           </h2>
@@ -52,21 +52,21 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
               <div 
-                className="border border-[#C4A45F]/20 rounded-lg overflow-hidden
-                         hover:border-[#C4A45F] transition-all duration-300"
+                className="bg-white border border-[#3E4A46]/20 rounded-lg overflow-hidden
+                         hover:border-[#957D56] hover:shadow-card-hover transition-all duration-300"
               >
                 <button
                   className="w-full p-6 text-left flex items-center justify-between gap-4
-                           hover:bg-[#1A1A1A] transition-colors duration-300"
+                           hover:bg-gray-50 transition-colors duration-300"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <h3 className="text-xl font-semibold text-white">
+                  <h3 className="text-xl font-semibold text-[#1A1A1A]">
                     {faq.question}
                   </h3>
                   <ChevronDown 
-                    className={`w-5 h-5 text-[#C4A45F] transition-transform duration-200 flex-shrink-0
+                    className={`w-5 h-5 text-[#957D56] transition-transform duration-200 flex-shrink-0
                               ${openIndex === index ? 'rotate-180' : ''}`}
                   />
                 </button>
@@ -76,7 +76,7 @@ export default function FAQ() {
                   className={`px-6 transition-all duration-300 ease-in-out
                             ${openIndex === index ? 'pb-6 max-h-96 opacity-100' : 'max-h-0 overflow-hidden opacity-0'}`}
                 >
-                  <p className="text-white/80">
+                  <p className="text-[#4A4A4A]">
                     {faq.answer}
                   </p>
                 </div>
