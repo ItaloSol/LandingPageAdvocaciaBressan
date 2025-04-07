@@ -75,7 +75,7 @@ export default function Hero() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center gap-2 hover-card"
+                  className="bg-[#7A6545] text-white inline-flex items-center gap-2 hover:bg-[#5E4D35] px-6 py-3 rounded-lg transition-colors"
                   role="button"
                   aria-label="Falar com especialista via WhatsApp"
                 >

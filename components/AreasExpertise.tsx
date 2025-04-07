@@ -68,12 +68,12 @@ export default function AreasExpertise() {
           {areas.map((area, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
               <div
+                aria-expanded={expandedCard === index}
                 className="bg-gray-50 border border-[#3E4A46]/20 rounded-xl overflow-hidden
                          hover:border-[#957D56] transition-all duration-300
                          group cursor-pointer"
                 onClick={() => handleCardClick(index)}
                 role="button"
-                aria-expanded={expandedCard === index}
                 aria-controls={`card-content-${index}`}
                 tabIndex={0}
                 onKeyDown={(e) => {
@@ -123,3 +123,4 @@ export default function AreasExpertise() {
     </section>
   );
 }
+

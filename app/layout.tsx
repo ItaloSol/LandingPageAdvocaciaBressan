@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'JBB Advocacia - Especialista em Direito Previdenciário',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'JBB Advocacia | Especialista em Direito Previdenciário',
     description: 'Escritório especializado em direito previdenciário com mais de 360 benefícios concedidos.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://advocaciabressanoficial.web.app',
@@ -74,6 +74,15 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: '/logo.ico',
+    shortcut: '/logo.ico',
+    apple: '/logo.ico',
+    other: {
+      rel: 'icon',
+      url: '/logo.ico',
+    },
+  },
 };
 
 
@@ -85,6 +94,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`scroll-smooth ${inter.variable}`}>
       <head>
+        {/* Add this link for favicon */}
+        <link rel="icon" href="/logo.ico" sizes="any" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         
