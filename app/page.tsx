@@ -9,7 +9,7 @@ import Specialist from '@/components/Specialist';
 import CallToAction from '@/components/CallToAction';
 import NationalCoverage from '@/components/NationalCoverage';
 import WhyChooseUs from '@/components/WhyChooseUs';
-
+import Reviews from '@/components/Reviews';
 
 export default function Home() {
   return (
@@ -20,6 +20,7 @@ export default function Home() {
       <AreasExpertise />
       <WhyChooseUs />
       <Specialist />
+      <Reviews />
       <NationalCoverage />
       <CallToAction />
       <FAQ />

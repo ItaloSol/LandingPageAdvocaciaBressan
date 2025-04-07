@@ -92,41 +92,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`scroll-smooth ${inter.variable}`}>
-      <head>
-        {/* Add this link for favicon */}
-        <link rel="icon" href="/logo.ico" sizes="any" />
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        
-        {/* Preload critical images */}
-        <link
-          rel="preload"
-          as="image"
-          href="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=360"
-          media="(max-width: 360px)"
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=360"
-          media="(max-width: 360px)"
-        />
-        
-        {/* Preconnect to external services */}
-        <link rel="preconnect" href="https://wa.me" crossOrigin="anonymous" />
-        
-        {/* Critical CSS */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          :root{--gold:#957D56;--green:#3E4A46;--background:#FFF;--text:#1A1A1A}
-          *{-webkit-font-smoothing:antialiased}
-          body{background:#fff;color:#1A1A1A}
-        `}} />
-      </head>
-      <body className={inter.className}>
-        {children}
-       
-      </body>
+    <html lang="pt-BR">
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
