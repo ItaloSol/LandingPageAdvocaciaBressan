@@ -79,7 +79,7 @@ export default function Contact() {
                 </div>
 
                 {/* Facebook Link */}
-                <div className="pt-2">
+                <div className="pt-2 ">
                   <a
                     href="https://www.facebook.com/jvbressanadvocacia"
                     target="_blank"

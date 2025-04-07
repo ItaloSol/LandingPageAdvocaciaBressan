@@ -15,15 +15,14 @@ export default function Hero() {
         aria-hidden="true"
       ></div>
       <Image
-        src="/logo.webp"
+        src="/logo.png"
         alt="Professional law office environment"
-        fill
-        className="object-cover"
+        width={800}
+        height={600}
+        className="object-cover absolute inset-0 m-auto"
         priority
         quality={75}
-        placeholder="blur"
-        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLi44QjhAOEA4Qi4tMkYyLlFUUVRAR0BXUFNMUE1HUVf/2wBDAR"
-        sizes="(max-width: 360px) 360px, (max-width: 640px) 640px, (max-width: 750px) 750px, 828px"
+        sizes="(max-width: 360px) 360px, (max-width: 300px) 300px"
       />
 
       <div className="container mx-auto px-4 relative z-20">
@@ -35,7 +34,7 @@ export default function Hero() {
                   src="/hero1.webp"
                   alt="Advogado especialista em direito previdenciário"
                   fill
-                  className="object-cover border-b-2 border-[#957D56]" // Added border-bottom
+                  className="object-cover border-b-2 border-gray-500" // Added border-bottom
                   priority
                   quality={75}
                   placeholder="blur"

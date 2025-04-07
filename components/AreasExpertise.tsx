@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Scale, Users, Briefcase, Heart, Home, Scroll, ChevronDown } from 'lucide-react';
+import { Scale, Users, Briefcase, Heart, Home, Scroll, ChevronDown,BriefcaseBusiness } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 export default function AreasExpertise() {
@@ -27,7 +27,7 @@ export default function AreasExpertise() {
       content: "Oferecemos assessoria jurídica completa em questões cíveis, incluindo contratos, responsabilidade civil, indenizações e cobranças. Nossa atuação visa sempre a melhor solução para seu caso, seja pela via judicial ou extrajudicial."
     },
     {
-      icon: Heart,
+      icon: BriefcaseBusiness,
       title: "Trabalhista",
       description: "Garantia dos seus direitos nas relações de trabalho",
       content: "Defendemos seus direitos trabalhistas com expertise e dedicação, tratando de questões como verbas rescisórias, horas extras, assédio moral, acidentes de trabalho e reconhecimento de vínculo empregatício."
