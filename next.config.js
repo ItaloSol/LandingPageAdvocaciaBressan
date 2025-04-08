@@ -5,6 +5,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { 
+    domains: ['advocaciabressanoficial.web.app'],
     unoptimized: true,
     deviceSizes: [360, 640, 750, 828],
     imageSizes: [16, 32, 48, 64, 96],
