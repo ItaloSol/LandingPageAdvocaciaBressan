@@ -38,7 +38,7 @@ export default function Hero() {
                 src="/hero-mobile.webp"
                 alt="Advogado especialista em direito previdenciário"
                 fill
-                className="object-cover mt-4"
+                className="object-cover pb-3 mt-4"
                 priority
                 quality={75}
                 sizes="100vw"
