@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Desktop Background Image (hidden on mobile) */}
       <div className="hidden md:block absolute inset-0 w-full h-full">
         <Image
-          src="/logo.png"
+          src="/logo.webp"
           alt="Professional law office environment"
           fill
           className="object-contain"
