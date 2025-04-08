@@ -35,7 +35,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-[#faf6ec]">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <h2 className="text-center mb-12">

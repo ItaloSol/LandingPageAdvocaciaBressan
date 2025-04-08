@@ -6,7 +6,7 @@ import ScrollReveal from './ScrollReveal';
 export default function Specialist() {
   return (
     <section 
-      className="section-padding bg-white"
+      className="section-padding bg-[#faf6ec]"
       aria-labelledby="specialist-title"
     >
       <div className="container mx-auto px-4">

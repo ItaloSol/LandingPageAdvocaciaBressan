@@ -51,7 +51,7 @@ export default function AreasExpertise() {
   };
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-[#faf6ec]">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <h2 className="text-center p-2 mb-16">

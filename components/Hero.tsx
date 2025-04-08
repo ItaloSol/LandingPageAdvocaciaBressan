@@ -9,46 +9,63 @@ export default function Hero() {
   const whatsappUrl = `https://wa.me/5517996088520?text=${message}`;
 
   return (
-    <header className="min-h-screen relative flex items-center parallax bg-white" role="banner">
+    <header className="relative flex justify-center items-center parallax bg-white" role="banner">
+       <ScrollReveal animation="slideUp" delay={0.2}>
       <div 
         className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/70 z-10"
         aria-hidden="true"
       ></div>
-      <Image
-        src="/logo.png"
-        alt="Professional law office environment"
-        width={800}
-        height={600}
-        className="object-cover absolute inset-0 m-auto"
-        priority
-        quality={75}
-        sizes="(max-width: 360px) 360px, (max-width: 300px) 300px"
-      />
+      
+      {/* Desktop Background Image (hidden on mobile) */}
+      <div className="hidden md:block absolute inset-0 w-full h-full">
+        <Image
+          src="/logo.png"
+          alt="Professional law office environment"
+          fill
+          className="object-contain"
+          priority
+          quality={75}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
 
-      <div className="container mx-auto px-4 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto  relative z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
           <div className="lg:order-2 lg:col-start-2">
-            <ScrollReveal animation="fadeIn" delay={0.4}>
-              <div className="relative w-full aspect-[3/4] max-w-[500px] mx-auto">
+            {/* Mobile Image - Full width on mobile only */}
+            <div className="md:hidden aspect-[4/3] relative">
+              <Image
+                src="/hero-mobile.webp"
+                alt="Advogado especialista em direito previdenciário"
+                fill
+                className="object-cover mt-4"
+                priority
+                quality={75}
+                sizes="100vw"
+              />
+            </div>
+
+            
+              <div className="hidden md:block relative w-full aspect-[3/4] max-w-[500px] mx-auto">
                 <Image
                   src="/hero1.webp"
                   alt="Advogado especialista em direito previdenciário"
                   fill
-                  className="object-cover border-b-2 border-gray-500" // Added border-bottom
+                  className="object-cover"
                   priority
                   quality={75}
                   placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLi44QjhAOEA4Qi4tMkYyLlFUUVRAR0BXUFNMUE1HUVf/2wBDAR"
+                  blurDataURL="data:image/jpeg;base64,..."
                   sizes="(max-width: 360px) 360px, (max-width: 640px) 640px, (max-width: 750px) 750px, 500px"
                 />
               </div>
-            </ScrollReveal>
+          
           </div>
 
-          <div className="lg:order-1 max-w-2xl space-y-8">
+          <div className="lg:order-1 px-4 max-w-2xl space-y-8">
             
 
-            <ScrollReveal animation="slideUp" delay={0.2}>
+            
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#1A1A1A] space-y-2">
                 <span className="block">ESPECIALISTA EM</span>
                 <span className="text-[#957D56] block">
@@ -56,16 +73,16 @@ export default function Hero() {
                   PREVIDENCIÁRIO
                 </span>
               </h1>
-            </ScrollReveal>
+      
 
-            <ScrollReveal animation="slideUp" delay={0.4}>
+       
               <p className="text-xl md:text-2xl text-[#1A1A1A] max-w-2xl">
                 Garantimos seus direitos junto ao INSS com{' '}
                 <span className="text-[#957D56]">mais de 360 benefícios conquistados</span> para nossos clientes.
               </p>
-            </ScrollReveal>
+           
 
-            <ScrollReveal animation="slideUp" delay={0.6}>
+           
               <div className="space-y-8">
                 <p className="text-lg text-[#4A4A4A]">
                   Teve benefício negado? Precisa se aposentar? Nossa equipe especializada está pronta para ajudar.
@@ -83,10 +100,10 @@ export default function Hero() {
                   GARANTA SEUS DIREITOS AGORA
                 </a>
               </div>
-            </ScrollReveal>
           </div>
         </div>
       </div>
+      </ScrollReveal>
     </header>
   );
 }
