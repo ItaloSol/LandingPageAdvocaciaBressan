@@ -9,7 +9,7 @@ export default function NationalCoverage() {
   const whatsappUrl = `https://wa.me/5517996088520?text=${message}`;
 
   return (
-    <section className="section-padding bg-[#faf6ec]">
+    <section className="section-padding bg-gray-200">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto bg-white rounded-2xl border border-[#3E4A46]/20 p-8 md:p-12
                        hover:border-[#957D56] hover:shadow-card-hover transition-all duration-300">

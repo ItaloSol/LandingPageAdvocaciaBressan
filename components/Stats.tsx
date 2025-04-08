@@ -95,7 +95,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-24 bg-[#faf6ec]">
+    <section className="py-24 bg-gray-200">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="bg-gray-50 rounded-2xl border border-[#3E4A46]/20 p-8 md:p-12 shadow-card
                      hover:shadow-card-hover hover:border-[#957D56] transition-all duration-300">
