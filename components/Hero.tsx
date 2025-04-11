@@ -9,7 +9,7 @@ export default function Hero() {
   const whatsappUrl = `https://wa.me/5517996088520?text=${message}`;
 
   return (
-    <header className="relative flex justify-center items-center parallax bg-white" role="banner">
+    <header className="relative flex justify-center items-center parallax bg-white  h-screen" role="banner">
        <ScrollReveal animation="slideUp" delay={0.2}>
       <div 
         className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/70 z-10"
